@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN" data-eco-partner-mirror="1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生态伙伴工作台</title>
+    <!-- 生成物，请勿手改：node .workbuddy/tools/sync-eco-partner-mirror.cjs（源站 https://shengtai.figma.site/，同步于 2026-10-25 16:46） -->
+<script>
+/* 本段由 sync-eco-partner-mirror.cjs 注入：http 部署（非安全上下文）下补齐 Web Crypto 能力，
+   否则本应用首帧 crypto.randomUUID() 就会抛错白屏。逻辑与 src/shared/secureContextShims.ts 一致。 */
+(function () {
+  if (typeof window === "undefined" || !window.crypto) return;
+  var c = window.crypto;
+  function uuid() {
+    var b = new Uint8Array(16);
+    if (typeof c.getRandomValues === "function") c.getRandomValues(b);
+    else for (var i = 0; i < 16; i++) b[i] = Math.floor(Math.random() * 256);
+    b[6] = (b[6] & 15) | 64; b[8] = (b[8] & 63) | 128;
+    var h = []; for (var j = 0; j < 16; j++) h.push(("0" + b[j].toString(16)).slice(-2));
+    var s = h.join("");
+    return s.slice(0, 8) + "-" + s.slice(8, 12) + "-" + s.slice(12, 16) + "-" + s.slice(16, 20) + "-" + s.slice(20);
+  }
+  function define(target, key, value) {
+    try { Object.defineProperty(target, key, { configurable: true, writable: true, value: value }); }
+    catch (e) { try { Object.defineProperty(Object.getPrototypeOf(target), key, { configurable: true, writable: true, value: value }); } catch (e2) {} }
+  }
+  if (typeof c.randomUUID !== "function") define(c, "randomUUID", uuid);
+  if (!c.subtle) {
+    define(c, "subtle", { digest: function () { return Promise.reject(new Error("SHA-256 未提供")); } });
+  }
+  window.__ecoPartnerMirror = { syncedAt: "2026-10-25 16:46", source: "https://shengtai.figma.site/" };
+})();
+</script>
+    <link rel="stylesheet" href="./assets/index-BR7W52Qv.css" />
+    <script type="module" src="./assets/index-o2207V8u.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

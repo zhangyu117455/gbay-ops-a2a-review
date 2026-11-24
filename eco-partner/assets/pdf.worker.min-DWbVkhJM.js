@@ -1,0 +1,1 @@
+var e=`https://shengtai.figma.site/assets/pdf.worker.min-wgc6bjNh.mjs`;export{e as default};
